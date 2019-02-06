@@ -1,0 +1,45 @@
+{
+  "name": "totvs-dts-fnd-e2e",
+  "version": "1.0.0",
+  "description": "Testes e2e automatizados do módulo de Foundation do \"TOTVS Datasul\"",
+  "author": "Rubens Dos Santos Filho",
+  "license": "ISC",
+  "homepage": "https://github.com/rubinhos/totvs-dts-fnd-e2e#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rubinhos/totvs-dts-fnd-e2e.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rubinhos/totvs-dts-fnd-e2e/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "protractor": "./node_modules/.bin/protractor",
+    "tsc": "./node_modules/.bin/tsc",
+    "webdriver-update": "./node_modules/.bin/webdriver-manager update",
+    "build": "npm run tsc",
+    "pretest": "webdriver-manager update",
+    "test": "npm run tsc && npm run protractor -- test/e2e/conf.js"
+  },
+  "keywords": [
+    "totvs",
+    "datasul",
+    "progress",
+    "openedge",
+    "oe-test-agent",
+    "protractor",
+    "e2e",
+    "tests"
+  ],
+  "dependencies": {
+    "oe-test-agent": "file:../../oe-test-agent/dist",
+    "protractor": "^5.4.2"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^3.3.8",
+    "@types/jasminewd2": "^2.0.6",
+    "@types/node": "^10.12.21",
+    "@types/protractor": "^4.0.0",
+    "typescript": "^3.3.1"
+  }
+}
