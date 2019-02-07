@@ -1,2 +1,0 @@
-O conteúdo desta pasta deve conter os utilitários da pasta e2e/utils existentes
-no projeto FWK-AUTOMATION.

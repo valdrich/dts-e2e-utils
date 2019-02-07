@@ -1,7 +1,7 @@
 import { oeAgent } from 'oe-test-agent';
 import { browser } from 'protractor';
 
-import { GrpAplicatDtsul } from './GrpAplicatDtsul';
+import { GrpAplicatDtsul } from '../../dist/models';
 import { MEN0077AA } from './men007aa.pageObject';
 
 describe('MEN007AA - Grupo Aplicativo', () => {

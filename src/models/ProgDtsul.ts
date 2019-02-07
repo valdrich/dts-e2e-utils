@@ -170,7 +170,6 @@ export class ProgDtsul {
     this._interfac = value;
   }
 
-
   public get tipProgDtsul() {
     return this._tipProgDtsul;
   }

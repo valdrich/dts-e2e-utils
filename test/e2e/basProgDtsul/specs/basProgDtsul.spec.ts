@@ -1,8 +1,8 @@
+import { FamiliaSO, Interface, ProgDtsul, Template, Tipo } from 'dist/models';
+import { UTMSGS } from 'dist/utils';
 import { oeAgent, OEConfig } from 'oe-test-agent';
 import { browser } from 'protractor';
 
-import { FamiliaSO, Interface, ProgDtsul, Template, Tipo } from '../../_models/ProgDtsul';
-import { UTMSGS } from '../../_utils/utmsgs.page';
 import { BasProgDtsul } from '../page-objects/basProgDtsul.pageObject';
 import { G01FN068 } from '../page-objects/g01fn068.pageObject';
 

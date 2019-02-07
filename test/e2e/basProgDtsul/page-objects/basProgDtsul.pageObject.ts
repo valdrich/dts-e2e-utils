@@ -1,8 +1,6 @@
+import { Interface, ProgDtsul } from 'dist/models';
+import { CrudEms2, UTMSGS } from 'dist/utils';
 import { oeAgent, OEAttributes, OEElement } from 'oe-test-agent';
-
-import { Interface, ProgDtsul } from '../../_models/ProgDtsul';
-import { CrudEms2 } from '../../_utils/crudEms2.page';
-import { UTMSGS } from '../../_utils/utmsgs.page';
 
 export class BasProgDtsul extends CrudEms2 {
   public wait(): OEElement {

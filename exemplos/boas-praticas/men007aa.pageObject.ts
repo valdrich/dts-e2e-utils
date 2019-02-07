@@ -1,7 +1,7 @@
 import { oeAgent } from 'oe-test-agent';
-import { CrudEms5 } from 'test/e2e/_utils/crudEms5.page';
 
-import { GrpAplicatDtsul } from './GrpAplicatDtsul';
+import { GrpAplicatDtsul } from '../../dist/models';
+import { CrudEms5 } from '../../dist/utils';
 import { MEN0077CA } from './men007ca.pageObject';
 
 export class MEN0077AA extends CrudEms5 {

@@ -1,7 +1,7 @@
 import { oeAgent } from 'oe-test-agent';
-import { CrudEms5Edit } from 'test/e2e/_utils/crudEms5Edit.page';
 
-import { GrpAplicatDtsul } from './GrpAplicatDtsul';
+import { GrpAplicatDtsul } from '../../dist/models';
+import { CrudEms5Edit } from '../../dist/utils';
 
 export class MEN0077CA extends CrudEms5Edit {
   public wait() {
