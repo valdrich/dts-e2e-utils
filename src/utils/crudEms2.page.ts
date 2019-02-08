@@ -4,44 +4,64 @@ export abstract class CrudEms2 {
   protected window!: OEElement;
 
   /**
-   * Define a janela atual Progress.
-   *
-   * @param win Objeto com a janela atual Progress.
+   * Define a instância do ```OEElement``` da tela de relatório.
+   * @param window Instância da tela de relatório retornada pelo ```OE Test Agent```.
    */
-  public setWindow(win: OEElement): void {
-    this.window = win;
+  public setWindow(window: OEElement): void {
+    this.window = window;
   }
 
   /**
-   * Executa a operação de Inclusão.
+   * Clica no botão de inclusão.
    */
   public add(): void {
     this.window.findElement('bt-add').choose();
   }
 
   /**
-   * Executa a operação de Cópia.
+   * Clica no botão de cópia.
    */
   public copy(): void {
     this.window.findElement('bt-cop').choose();
   }
 
   /**
-   * Executa a operação de Exclusão.
+   * Clica no botão de exclusão.
    */
   public delete(): void {
     this.window.findElement('bt-del').choose();
   }
 
   /**
-   * Executa a operação de Modificação.
+   * Clica no botão de modificação.
    */
   public modify(): void {
     this.window.findElement('bt-mod').choose();
   }
 
   /**
-   * Executa a operação de Primeira Ocorrência.
+   * Clica no botão de salvar as alterações.
+   */
+  public save(): void {
+    this.window.findElement('bt-sav').choose();
+  }
+
+  /**
+   * Clica no botão de cancelar as alterações.
+   */
+  public cancel(): void {
+    this.window.findElement('bt-can').choose();
+  }
+
+  /**
+   * Clica no botão de desfazer as alterações.
+   */
+  public undo(): void {
+    this.window.findElement('bt-und').choose();
+  }
+
+  /**
+   * Clica no botão para navegar até o primeiro registro.
    */
   public firstItem(): void {
     this.window.findElement('bt-fir').choose();
@@ -55,79 +75,58 @@ export abstract class CrudEms2 {
   }
 
   /**
-   * Executa a operação de Próxima Ocorrência.
+   * Clica no botão para navegar até o próximo registro.
    */
   public nextItem(): void {
     this.window.findElement('bt-nex').choose();
   }
 
   /**
-   * Executa a operação de Última Ocorrência.
+   * Clica no botão para navegar até o próximo registro.
    */
   public lastItem(): void {
     this.window.findElement('bt-las').choose();
   }
 
   /**
-   * Executa a operação de Pesquisa.
+   * Clica no botão de pesquisa.
    */
   public searchItem(): void {
     this.window.findElement('bt-sea').choose();
   }
 
   /**
-   * Executa a operação de Vá Para.
+   * Clica no botão de Vá Para.
    */
   public goTo(): void {
     this.window.findElement('bt-go').choose();
   }
 
   /**
-   * Executa a operação de Sair.
+   * Clica no botão de sair.
    */
   public exit(): void {
     this.window.findElement('bt-exi').choose();
   }
 
   /**
-   * Executa a operação de Ajuda.
+   * Clica no botão de ajuda.
    */
   public help(): void {
     this.window.findElement('bt-hel').choose();
   }
 
   /**
-   * Executa a operação de Relatórios.
+   * Clica no botão de relatórios.
    */
-  public report(): void {
+  public reports(): void {
     this.window.findElement('bt-pri').choose();
   }
 
   /**
-   * Executa a operação de Consultas.
+   * Clica no botão de consultas.
    */
-  public query(): void {
+  public queries(): void {
     this.window.findElement('bt-joi').choose();
-  }
-
-  /**
-   * Executa a operação Confirma alterações.
-   */
-  public save(): void {
-    this.window.findElement('bt-sav').choose();
-  }
-
-  /**
-   * Executa a operação Cancela alterações.
-   */
-  public cancel(): void {
-    this.window.findElement('bt-can').choose();
-  }
-
-  /**
-   * Executa a operação Desfaz alterações.
-   */
-  public undo(): void {
-    this.window.findElement('bt-und').choose();
   }
 }

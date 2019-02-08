@@ -113,7 +113,7 @@ export abstract class Report {
   }
 
   /**
-   * Clica no botão de fechar a tela.
+   * Clica no botão de sair.
    **/
   public exit(): void {
     this.window.findElement('bt-cancelar').choose();
