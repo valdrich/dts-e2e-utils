@@ -4,16 +4,15 @@ export abstract class CrudEms5Edit {
   protected window!: OEElement;
 
   /**
-   * Define a janela atual Progress.
-   *
-   * @param win Objeto com a janela atual Progress.
+   * Define a instância do ```OEElement``` da tela de relatório.
+   * @param window Instância da tela de relatório retornada pelo ```OE Test Agent```.
    */
-  public setWindow(win: OEElement): void {
-    this.window = win;
+  public setWindow(window: OEElement): void {
+    this.window = window;
   }
 
   /**
-   * Executa a operação de Cópia.
+   * Clica no botão de cópia.
    */
 
   public copy(): void {
@@ -21,28 +20,21 @@ export abstract class CrudEms5Edit {
   }
 
   /**
-   * Executa a operação de Ajuda.
-   */
-  public help(): void {
-    this.window.findElement('bt_hel2').choose();
-  }
-
-  /**
-   * Executa a operação de Ok.
+   * Clica no botão OK.
    */
   public ok(): void {
     this.window.findElement('bt_ok').choose();
   }
 
   /**
-   * Executa a operação de Salvar.
+   * Clica no botão de salvar as alterações.
    */
   public save(): void {
     this.window.findElement('bt_save').choose();
   }
 
   /**
-   * Executa a operação de Cancelar.
+   * Clica no botão de cancelar as alterações.
    */
   public cancel(): void {
     this.window.findElement('bt_can').choose();
@@ -67,5 +59,12 @@ export abstract class CrudEms5Edit {
    */
   public searchItem(): void {
     this.window.findElement('bt_sea2').choose();
+  }
+
+  /**
+   * Clica no botão de ajuda.
+   */
+  public help(): void {
+    this.window.findElement('bt_hel2').choose();
   }
 }

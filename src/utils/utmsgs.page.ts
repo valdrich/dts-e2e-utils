@@ -1,27 +1,31 @@
 import { OEAgent, oeAgent, OEElement } from 'oe-test-agent';
 
 export class UTMSGS {
-  public static getMessageWindow(title: string, timeout = OEAgent.DEFAULT_TIMEOUT): OEElement {
-    return oeAgent.waitForWindow(title, timeout);
+  private static getWindow(msg: string | OEElement, timeout = OEAgent.DEFAULT_TIMEOUT): OEElement {
+    return typeof msg === 'string' ? oeAgent.waitForWindow(msg, timeout) : msg;
   }
 
-  public static ok(msgWindow: OEElement): void {
-    msgWindow.findElement('bt_ok').choose();
+  public static getMessageWindow(title: string, timeout?: number): OEElement {
+    return this.getWindow(title, timeout);
   }
 
-  public static yes(msgWindow: OEElement): void {
-    msgWindow.findElement('bt_ok').choose();
+  public static ok(msg: string | OEElement, timeout?: number): void {
+    this.getWindow(msg).findElement('bt_ok').choose();
   }
 
-  public static no(msgWindow: OEElement): void {
-    msgWindow.findElement('bt_no').choose();
+  public static yes(msg: string | OEElement, timeout?: number): void {
+    this.getWindow(msg).findElement('bt_ok').choose();
   }
 
-  public static getMessage(msgWindow: OEElement): Promise<string> {
-    return msgWindow.findElement('v_msg_val').getValue();
+  public static no(msg: string | OEElement, timeout?: number): void {
+    this.getWindow(msg).findElement('bt_no').choose();
   }
 
-  public static getHelp(msgWindow: OEElement): Promise<string> {
-    return msgWindow.findElement('v_msg_hlp').getValue();
+  public static getMessage(msg: string | OEElement, timeout?: number): Promise<string> {
+    return this.getWindow(msg).findElement('v_msg_val').getValue();
+  }
+
+  public static getHelp(msg: string | OEElement, timeout?: number): Promise<string> {
+    return this.getWindow(msg, timeout).findElement('v_msg_hlp').getValue();
   }
 }
