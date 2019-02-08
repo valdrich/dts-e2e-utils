@@ -81,10 +81,10 @@ export abstract class Report {
   }
 
   /**
-   * Recebe o valor para o tooglebox Imprimir Página de Parâmetros e
-   * o numero de colunas que o relatório irá conter.
-   * @param print Campo Imprimir Página de Parâmetros.
-   * @param columns Numero de colunas do relatório.
+   * Define o valor dos campos de parâmetros de impressão.
+   *
+   * @param print ```true``` marca impressão da página de parâmetros.
+   * @param columns Número de colunas do relatório.
    */
   public setParametersPage(print: boolean, columns: Columns): void {
     this.window.findElement('tg-parametro').check(print);
@@ -92,51 +92,35 @@ export abstract class Report {
   }
 
   /**
-   * Clica no botão Seleção de arquivo.
-   **/
-  public selectFile(): void {
-    this.window.findElement('bt-arquivo').choose();
-  }
-
-  /**
-   * Clica no botão Configuração de impressora.
+   * Clica no botão de seleção de impressora.
    **/
   public selectPrinter(): void {
     this.window.findElement('bt-config-impr').choose();
   }
 
   /**
-   * Clica no botão Executar.
+   * Clica no botão de seleção de arquivo.
+   **/
+  public selectFile(): void {
+    this.window.findElement('bt-arquivo').choose();
+  }
+
+  /**
+   * Clica no botão de executar relatório.
    **/
   public execute(): void {
     this.window.findElement('bt-executar').choose();
   }
 
   /**
-   * Confirma a execução da atualização do menu.
-   */
-  public confirmExecution(): void {
-    const msgWindow = UTMSGS.getMessageWindow('(56372)');
-    UTMSGS.yes(msgWindow);
-  }
-
-  /**
-   * Cancela a execução da atualização do menu.
-   */
-  public cancelExecution(): void {
-    const msgWindow = UTMSGS.getMessageWindow('(56372)');
-    UTMSGS.no(msgWindow);
-  }
-
-  /**
-   * Clica no botão Fechar
+   * Clica no botão de fechar a tela.
    **/
   public exit(): void {
     this.window.findElement('bt-cancelar').choose();
   }
 
   /**
-   * Clica no botão Ajuda.
+   * Clica no botão de ajuda.
    **/
   public help(): void {
     this.window.findElement('bt-ajuda').choose();
