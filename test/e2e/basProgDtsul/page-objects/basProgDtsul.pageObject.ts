@@ -1,6 +1,8 @@
-import { Interface, ProgDtsul } from 'dist/models';
-import { CrudEms2, UTMSGS } from 'dist/utils';
 import { oeAgent, OEAttributes, OEElement } from 'oe-test-agent';
+
+import { Interface, ProgDtsul } from '../../../../dist/models';
+import { CrudEms2, UTMSGS } from '../../../../dist/utils';
+import { G01FN068 } from './g01fn068.pageObject';
 
 export class BasProgDtsul extends CrudEms2 {
   public wait(): OEElement {
@@ -61,5 +63,26 @@ export class BasProgDtsul extends CrudEms2 {
     } else {
       UTMSGS.no(message);
     }
+  }
+
+  public goToOK(codProgDtsul: string): Promise<boolean> {
+    this.goTo();
+
+    const g01fn068 = new G01FN068();
+    g01fn068.wait();
+    g01fn068.codProgDtsul = codProgDtsul;
+    g01fn068.ok();
+
+    // (2) - Programa não encontrado!
+    const message = UTMSGS.getMessageWindow('(2)', 1_000);
+
+    return message.isValid().then((valid) => {
+      if (valid) {
+        UTMSGS.ok(message); // Fecha a tela da mensagem.
+        g01fn068.cancel(); // Fecha a tela do GoTo.
+      }
+
+      return !valid;
+    });
   }
 }

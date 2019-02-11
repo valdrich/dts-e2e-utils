@@ -2,57 +2,56 @@ import { OEElement } from 'oe-test-agent';
 export declare abstract class CrudEms5 {
     protected window: OEElement;
     /**
-     * Define a janela atual Progress.
-     *
-     * @param win Objeto com a janela atual Progress.
+     * Define a instância do ```OEElement``` da tela de relatório.
+     * @param window Instância da tela de relatório retornada pelo ```OE Test Agent```.
      */
-    setWindow(win: OEElement): void;
+    setWindow(window: OEElement): void;
     /**
-     * Executa a operação de Inclusão.
+     * Clica no botão de inclusão.
      */
     add(): void;
     /**
-     * Executa a operação de Exclusão.
+     * Clica no botão de exclusão.
      */
     delete(): void;
     /**
-     * Executa a operação de Modificação.
+     * Clica no botão de modificação.
      */
     modify(): void;
     /**
-     * Executa a operação de Primeira Ocorrência.
+     * Clica no botão para navegar até o primeiro registro.
      */
     firstItem(): void;
     /**
-     * Executa a operação de Ocorrência Anterior.
+     * Clica no botão para navegar até o registro anterior.
      */
     previousItem(): void;
     /**
-     * Executa a operação de Próxima Ocorrência.
+     * Clica no botão para navegar até o próximo registro.
      */
     nextItem(): void;
     /**
-     * Executa a operação de Última Ocorrência.
+     * Clica no botão para navegar até o último registro.
      */
     lastItem(): void;
     /**
-     * Executa a operação de Pesquisa.
+     * Clica no botão de pesquisa.
      */
     searchItem(): void;
     /**
-     * Executa a operação de Sair.
+     * Clica no botão de sair.
      */
     exit(): void;
     /**
-     * Executa a operação de Ajuda.
+     * Clica no botão de ajuda.
      */
     help(): void;
     /**
      * Executa a operação de Relatórios.
      */
-    printer(): void;
+    reports(): void;
     /**
-     * Executa a operação de Detalhes.
+     * Clica no botão de detalhes.
      */
     detail(): void;
 }

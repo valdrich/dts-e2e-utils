@@ -1,5 +1,5 @@
 import { OEElement } from 'oe-test-agent';
-declare enum Destiny {
+declare enum Destination {
     'Impressora' = 1,
     'Arquivo' = 2,
     'Terminal' = 3
@@ -9,75 +9,73 @@ declare enum Mode {
     'Batch' = 2
 }
 declare enum Columns {
-    '80_colunas' = 1,
-    '132_colunas' = 2
+    '080 colunas' = 1,
+    '132 colunas' = 2
 }
 export declare abstract class Report {
     protected window: OEElement;
-    static readonly Destiny: typeof Destiny;
+    static readonly Destination: typeof Destination;
     static readonly Mode: typeof Mode;
     static readonly Columns: typeof Columns;
     /**
-     * Define a janela atual Progress.
-     *
-     * @param win Objeto com a janela atual Progress.
+     * Define a instância do ```OEElement``` da tela de relatório.
+     * @param window Instância da tela de relatório retornada pelo ```OE Test Agent```
      */
-    setWindow(win: OEElement): void;
+    setWindow(window: OEElement): void;
     /**
-     * Seleciona a aba Seleção.
+     * Seleciona a aba de "Seleção".
      */
     selectTab(): void;
     /**
-     * Seleciona a aba Parâmetros.
+     * Seleciona a aba de "Parâmetros".
      */
     parametersTab(): void;
     /**
-     * Seleciona a aba Impressão.
+     * Seleciona a aba de "Impressão".
      */
     printerTab(): void;
     /**
-     * Seta o destino da impressão de acordo com o valor recebido.
-     * @param reportTarget Destino da impressão.
+     * Define o valor do campo de destino de emissão do relatório.
+     * @param destination Valor do destino de emissão.
      */
-    setReportTarget(reportTarget: Destiny): void;
+    setReportDestination(destination: Destination): void;
     /**
-     * Seta o modo de impressão de acordo com o valor recebido.
-     * @param executionMode Modo de impressão.
+     * Define o valor do campo de destino de emissão do relatório.
+     *
+     * @deprecated Substituir pelo método ```setReportDestination```.
+     * @param destination Destino de emissão.
      */
-    setExecutionMode(executionMode: Mode): void;
+    setReportTarget(destination: Destination): void;
     /**
-     * Recebe o valor para o tooglebox Imprimir Página de Parâmetros e
-     * o numero de colunas que o relatório irá conter.
-     * @param print Campo Imprimir Página de Parâmetros.
-     * @param columns Numero de colunas do relatório.
+     * Define o valor do campo de modo de execução do relatório.
+     * @param mode Modo de execução.
      */
-    setParametersPage(print: boolean | undefined, columns: Columns): void;
+    setExecutionMode(mode: Mode): void;
     /**
-     * Clica no botão Seleção de arquivo.
-     **/
-    selectFile(): void;
+     * Define o valor dos campos de parâmetros de impressão.
+     *
+     * @param print ```true``` marca impressão da página de parâmetros.
+     * @param columns Número de colunas do relatório.
+     */
+    setParametersPage(print: boolean, columns: Columns): void;
     /**
-     * Clica no botão Configuração de impressora.
+     * Clica no botão de seleção de impressora.
      **/
     selectPrinter(): void;
     /**
-     * Clica no botão Executar.
+     * Clica no botão de seleção de arquivo.
+     **/
+    selectFile(): void;
+    /**
+     * Clica no botão de executar relatório.
      **/
     execute(): void;
     /**
-     * Confirma a execução da atualização do menu.
-     */
-    confirmExecution(): void;
-    /**
-     * Cancela a execução da atualização do menu.
-     */
-    cancelExecution(): void;
-    /**
-     * Clica no botão Fechar
+     * Clica no botão de sair.
      **/
     exit(): void;
     /**
-     * Clica no botão Ajuda.
+     * Clica no botão de ajuda.
      **/
     help(): void;
 }

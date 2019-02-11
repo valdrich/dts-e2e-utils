@@ -1,9 +1,10 @@
 import { OEElement } from 'oe-test-agent';
 export declare class UTMSGS {
+    private static getWindow;
     static getMessageWindow(title: string, timeout?: number): OEElement;
-    static ok(msgWindow: OEElement): void;
-    static yes(msgWindow: OEElement): void;
-    static no(msgWindow: OEElement): void;
-    static getMessage(msgWindow: OEElement): Promise<string>;
-    static getHelp(msgWindow: OEElement): Promise<string>;
+    static ok(msg: string | OEElement, timeout?: number): void;
+    static yes(msg: string | OEElement, timeout?: number): void;
+    static no(msg: string | OEElement, timeout?: number): void;
+    static getMessage(msg: string | OEElement, timeout?: number): Promise<string>;
+    static getHelp(msg: string | OEElement, timeout?: number): Promise<string>;
 }

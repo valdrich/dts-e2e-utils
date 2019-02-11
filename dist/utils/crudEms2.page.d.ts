@@ -2,29 +2,40 @@ import { OEElement } from 'oe-test-agent';
 export declare abstract class CrudEms2 {
     protected window: OEElement;
     /**
-     * Define a janela atual Progress.
-     *
-     * @param win Objeto com a janela atual Progress.
+     * Define a instância do ```OEElement``` da tela de relatório.
+     * @param window Instância da tela de relatório retornada pelo ```OE Test Agent```.
      */
-    setWindow(win: OEElement): void;
+    setWindow(window: OEElement): void;
     /**
-     * Executa a operação de Inclusão.
+     * Clica no botão de inclusão.
      */
     add(): void;
     /**
-     * Executa a operação de Cópia.
+     * Clica no botão de cópia.
      */
     copy(): void;
     /**
-     * Executa a operação de Exclusão.
+     * Clica no botão de exclusão.
      */
     delete(): void;
     /**
-     * Executa a operação de Modificação.
+     * Clica no botão de modificação.
      */
     modify(): void;
     /**
-     * Executa a operação de Primeira Ocorrência.
+     * Clica no botão de salvar as alterações.
+     */
+    save(): void;
+    /**
+     * Clica no botão de cancelar as alterações.
+     */
+    cancel(): void;
+    /**
+     * Clica no botão de desfazer as alterações.
+     */
+    undo(): void;
+    /**
+     * Clica no botão para navegar até o primeiro registro.
      */
     firstItem(): void;
     /**
@@ -32,47 +43,35 @@ export declare abstract class CrudEms2 {
      */
     previousItem(): void;
     /**
-     * Executa a operação de Próxima Ocorrência.
+     * Clica no botão para navegar até o próximo registro.
      */
     nextItem(): void;
     /**
-     * Executa a operação de Última Ocorrência.
+     * Clica no botão para navegar até o próximo registro.
      */
     lastItem(): void;
     /**
-     * Executa a operação de Pesquisa.
+     * Clica no botão de pesquisa.
      */
     searchItem(): void;
     /**
-     * Executa a operação de Vá Para.
+     * Clica no botão de Vá Para.
      */
     goTo(): void;
     /**
-     * Executa a operação de Sair.
+     * Clica no botão de sair.
      */
     exit(): void;
     /**
-     * Executa a operação de Ajuda.
+     * Clica no botão de ajuda.
      */
     help(): void;
     /**
-     * Executa a operação de Relatórios.
+     * Clica no botão de relatórios.
      */
-    report(): void;
+    reports(): void;
     /**
-     * Executa a operação de Consultas.
+     * Clica no botão de consultas.
      */
-    query(): void;
-    /**
-     * Executa a operação Confirma alterações.
-     */
-    save(): void;
-    /**
-     * Executa a operação Cancela alterações.
-     */
-    cancel(): void;
-    /**
-     * Executa a operação Desfaz alterações.
-     */
-    undo(): void;
+    queries(): void;
 }

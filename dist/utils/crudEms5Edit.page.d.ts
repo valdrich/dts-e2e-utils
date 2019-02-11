@@ -2,29 +2,24 @@ import { OEElement } from 'oe-test-agent';
 export declare abstract class CrudEms5Edit {
     protected window: OEElement;
     /**
-     * Define a janela atual Progress.
-     *
-     * @param win Objeto com a janela atual Progress.
+     * Define a instância do ```OEElement``` da tela de relatório.
+     * @param window Instância da tela de relatório retornada pelo ```OE Test Agent```.
      */
-    setWindow(win: OEElement): void;
+    setWindow(window: OEElement): void;
     /**
-     * Executa a operação de Cópia.
+     * Clica no botão de cópia.
      */
     copy(): void;
     /**
-     * Executa a operação de Ajuda.
-     */
-    help(): void;
-    /**
-     * Executa a operação de Ok.
+     * Clica no botão OK.
      */
     ok(): void;
     /**
-     * Executa a operação de Salvar.
+     * Clica no botão de salvar as alterações.
      */
     save(): void;
     /**
-     * Executa a operação de Cancelar.
+     * Clica no botão de cancelar as alterações.
      */
     cancel(): void;
     /**
@@ -39,4 +34,8 @@ export declare abstract class CrudEms5Edit {
      * Executa a operação de Pesquisa.
      */
     searchItem(): void;
+    /**
+     * Clica no botão de ajuda.
+     */
+    help(): void;
 }
