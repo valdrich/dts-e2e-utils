@@ -1,5 +1,5 @@
 {
-  "name": "totvs-dts-e2e",
+  "name": "@totvs-frame-datasul/dts-e2e",
   "version": "1.0.0",
   "description": "Utilitários de testes e2e para o \"TOTVS Datasul\"",
   "author": "TOTVS S/A",

@@ -1,5 +1,3 @@
-import { oeAgent } from 'oe-test-agent';
-
 describe('LOGIN', () => {
   describe('Interno', () => {
     it('não deve autenticar usuário com senha expirada', () => {});

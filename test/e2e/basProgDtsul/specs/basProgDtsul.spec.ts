@@ -26,7 +26,7 @@ describe('BAS_PROG_DTSUL - Manutenção de Programas Datasul', () => {
     oeAgent.start(browser.params.oeConfig as OEConfig);
 
     // Executa o programa "BAS_PROG_DTSUL".
-    oeAgent.run('men/men702dd.r', ['THIS-PROCEDURE', 'bas_prog_dtsul']);
+    oeAgent.run('men/men012aa.w');
   });
 
   it('deve ter executado o programa "bas_prog_dtsul"', () => {
